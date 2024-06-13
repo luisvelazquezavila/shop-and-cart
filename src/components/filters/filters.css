@@ -1,0 +1,19 @@
+header {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.title {
+  color:  #4c768d;
+  font-size: clamp(2.5rem, 4vw, 5rem);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  input, select {
+    margin-left: .5rem;
+  }
+}
