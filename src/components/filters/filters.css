@@ -6,14 +6,19 @@ header {
 
 .title {
   color:  #4c768d;
-  font-size: clamp(2.5rem, 4vw, 5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
+  align-items: end;
   gap: 2rem;
   input, select {
     margin-left: .5rem;
   }
+}
+
+.filters p {
+  margin-left: .5rem;
 }

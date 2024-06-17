@@ -1,9 +1,12 @@
 import useFilters from "../../hooks/useFilters"
 import "./filters.css"
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Filters() {
 
   const { filters, setFilters } = useFilters();
+  const priceInputId = uuidv4();
+  const categoryInputId = uuidv4();
 
   const handleMaxPrice = e => {
     setFilters(prevState => ({
@@ -23,21 +26,22 @@ export default function Filters() {
     <header>
       <h1 className="title">React Shop 🛒</h1>
       <div className="filters">
-        <label htmlFor="">
-          Precio Maximo
+        <label htmlFor={priceInputId}>
+          <p>Precio Maximo:</p>
           <input 
+            id={priceInputId}
             onChange={handleMaxPrice}
             value={filters.maxPrice}
             type="range" 
             max={2000}
             min={0}
           />
-          {filters.maxPrice}
+          ${filters.maxPrice}
         </label>
 
-        <label>
+        <label htmlFor={categoryInputId}>
           Categoría
-          <select onChange={handleCategory}>
+          <select id={categoryInputId} onChange={handleCategory}>
             <option value="all">Todas</option>
             <option value="smartphones">Celulares</option>
             <option value="laptops">Laptops</option>
@@ -46,8 +50,6 @@ export default function Filters() {
           </select>
         </label>
       </div>
-        
-
     </header>
   )
 }
