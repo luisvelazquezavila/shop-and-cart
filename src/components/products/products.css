@@ -1,11 +1,11 @@
 .products {
-  padding: 1rem;
   display: grid;
   margin: 0 auto;
   place-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   width: 90%;
+  padding: 4rem 1rem;
 }
 
 .product {
