@@ -1,4 +1,4 @@
-import { Button, Divider, Drawer } from "@mui/material"
+import { Badge, Button, Divider, Drawer } from "@mui/material"
 import "./cart.css"
 import { useState } from "react"
 import { CartIcon, ClearCartIcon } from "../Icons";
@@ -28,7 +28,12 @@ export default function Cart() {
         onClick={() => setOpen(!open)}
         className="cart-button"
       >
-        <CartIcon />
+        <Badge 
+          color='secondary' 
+          badgeContent={cart.reduce((total, item) => total + item.quantity, 0)}
+        >
+          <CartIcon />
+        </Badge>
       </div>
       <Drawer
         open={open}
